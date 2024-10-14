@@ -12,6 +12,12 @@ class Car {
     std::string vinNumber;
     int passengerSeats;
     int doors;
+public:
+    Car();
+    Car(int id, std::string model, int year, double price, std::string registrationNumber, std::string vinNumber, int passengerSeats, int doors);
+    Car(const Car&) = default;
+    ~Car() = default;
+    void display() const;
 };
 
 #endif //CAR_H
