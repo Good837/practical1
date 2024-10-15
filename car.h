@@ -18,6 +18,7 @@ public:
     Car(const Car&) = default;
     ~Car() = default;
     void display() const;
+    bool operator==(const Car &other) const;
 };
 
 #endif //CAR_H

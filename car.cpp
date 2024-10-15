@@ -20,6 +20,16 @@ doors(doors) {}
         cout << "VinNumber: " << vinNumber << endl;
         cout << "Passenger Seats: " << passengerSeats << endl;
         cout << "Doors: " << doors << endl;
-}
+    }
+    bool Car::operator==(const Car &other) const {
+        return id == other.id &&
+            model == other.model &&
+                year == other.year &&
+                    price == other.price &&
+                        registrationNumber == other.registrationNumber &&
+                            vinNumber == other.vinNumber &&
+                                passengerSeats == other.passengerSeats &&
+                                    doors == other.doors;
+    }
 
 
