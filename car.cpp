@@ -15,7 +15,7 @@ doors(doors) {}
         cout << "ID: " << id << endl;
         cout << "Model: " << model << endl;
         cout << "Year: " << year << endl;
-        cout << "Price: " << price << endl;
+        cout << "Price: " << price << "$"  << endl;
         cout << "Registration Number: " << registrationNumber << endl;
         cout << "VinNumber: " << vinNumber << endl;
         cout << "Passenger Seats: " << passengerSeats << endl;
