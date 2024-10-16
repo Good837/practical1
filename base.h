@@ -4,13 +4,20 @@
 
 #ifndef BASE_H
 #define BASE_H
+#include <string>
 
-namespace Base {
-
-class base {
-
+class Base {
+protected:
+    int id;
+    std::string model;
+    int year;
+    double price;
+    std::string registrationNumber;
+    public:
+    Base();
+    Base(int id, std::string model, int year, double price, std::string registrationNumber);
+    void display() const;
 };
-
-} // Base
+// Base
 
 #endif //BASE_H
