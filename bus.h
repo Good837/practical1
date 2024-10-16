@@ -16,7 +16,7 @@ class Bus : public Base {
     Bus(int id, std::string model, int year, double price, std::string registrationNumber, int passengerSeats, bool seatsDisabled);
     Bus(const Bus&) = default;
     ~Bus() = default;
-    void display() const;
+    void display() const override;
 };
 
 

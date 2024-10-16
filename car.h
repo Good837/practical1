@@ -9,7 +9,7 @@ class Car : public Base {
 public:
     Car();
     Car(int id, std::string model, int year, double price, std::string registrationNumber, std::string vinNumber, int passengerSeats, int doors);
-    void display() const;
+    void display() const override;
 };
 
 #endif //CAR_H

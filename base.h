@@ -16,7 +16,7 @@ protected:
     public:
     Base();
     Base(int id, std::string model, int year, double price, std::string registrationNumber);
-    void display() const;
+    virtual void display() const = 0;
 };
 // Base
 
