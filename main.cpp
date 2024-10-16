@@ -1,21 +1,73 @@
 #include "car.h"
 #include "bus.h"
 #include <iostream>
-#include <vector>
 using namespace std;
 
+enum BaseType {
+    CarType = 1,
+    BusType = 2,
+    EXIT = 3
+};
+
+BaseType displayMenu() {
+    int choice;
+    cout << "Select the type of vehicle to create:\n";
+    cout << "1. Car\n";
+    cout << "2. Bus\n";
+    cout << "3. Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 1)
+        return CarType;
+    else if (choice == 2)
+        return BusType;
+    else
+        return EXIT;
+}
+
+Base* createVehicle(BaseType choice) {
+    switch (choice) {
+        case CarType:
+            return new Car();
+        case BusType:
+            return new Bus();
+        case EXIT:
+            default:
+                return nullptr;
+    }
+}
+
 int main() {
-    Car car1(1, "Toyota", 2020, 24000.0, "AB123CD", "1HGM82633A123456", 5, 4);
-    Car car2(2, "Honda", 2021, 26000.0, "EF456GH", "1HGCM2633A654321", 5, 4);
+    Base* vehicles[5];
+    int createdVehicles = 0;
 
-    Bus bus1(1, "Mercedes Sprinter", 2022, 45000.0, "AB123CD", 20, true);
-    Bus bus2(2, "Ford Transit", 2021, 40000.0, "EF456GH", 16, false);
+    while (createdVehicles < 5) {
+        BaseType choice = displayMenu();
 
-    vector<Base*> bases = {&bus1, &bus2, &car1, &car2};
+        if (choice == EXIT) {
+            cout << "Exiting..." << endl;
+            break;
+        }
 
-    for (const auto* base : bases) {
-        base->display();
+        Base* vehicle = createVehicle(choice);
+        if (vehicle != nullptr) {
+            vehicles[createdVehicles] = vehicle;
+            cout << "Vehicle " << createdVehicles + 1 << " created." << endl;
+            createdVehicles++;
+        } else {
+            cout << "Error! Try again." << endl;
+        }
+    }
+
+    cout << "\nVehicle details:" << endl;
+    for (int i = 0; i < createdVehicles; ++i) {
+        vehicles[i]->display();
         cout << endl;
+    }
+
+    for (int i = 0; i < createdVehicles; ++i) {
+        delete vehicles[i];
     }
 
     return 0;
