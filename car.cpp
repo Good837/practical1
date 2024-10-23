@@ -13,5 +13,12 @@ void Car::display() const {
     cout << "Doors: " << doors << endl;
 }
 
+void Car::input() {
+    Base::input();
+    cout << "Doors: ";
+    cin >> doors;
+}
+
+
 
 

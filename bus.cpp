@@ -15,3 +15,10 @@ void Bus::display() const {
     cout << "Seats Disabled: " << (seatsDisabled ? "Yes" : "No") << endl;
 }
 
+void Bus::input() {
+    Base::input();
+    cout << "Passenger Seats: ";
+    cin >> passengerSeats;
+    cout << "Seats Disabled: ";
+    cin >> seatsDisabled;
+}

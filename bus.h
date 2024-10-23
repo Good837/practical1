@@ -17,6 +17,7 @@ class Bus : public Base {
     Bus(const Bus&) = default;
     ~Bus() = default;
     void display() const override;
+    void input() override;
 };
 
 

@@ -10,6 +10,7 @@ public:
     Car();
     Car(int id, std::string model, int year, double price, std::string registrationNumber, std::string vinNumber, int passengerSeats, int doors);
     void display() const override;
+    void input() override;
 };
 
 #endif //CAR_H

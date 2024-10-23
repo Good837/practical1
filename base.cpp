@@ -20,3 +20,17 @@ void Base::display() const {
     std::cout << "Price: " << price << std::endl;
     std::cout << "Registration Number: " << registrationNumber << std::endl;
 }
+
+void Base::input() {
+    std::cout << "Enter ID: ";
+    std::cin >> id;
+    std::cout << "Enter Model: ";
+    std::cin >> model;
+    std::cout << "Enter Year: ";
+    std::cin >> year;
+    std::cout << "Enter Price: ";
+    std::cin >> price;
+    std::cout << "Enter Registration Number: ";
+    std::cin >> registrationNumber;
+}
+
