@@ -1,4 +1,5 @@
 QT       += core gui
+QT += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,7 +16,8 @@ SOURCES += \
     car.cpp \
     cardialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    sqlitedbmanager.cpp
 
 HEADERS += \
     base.h \
@@ -23,7 +25,8 @@ HEADERS += \
     busdialog.h \
     car.h \
     cardialog.h \
-    mainwindow.h
+    mainwindow.h \
+    sqlitedbmanager.h
 
 FORMS += \
     busdialog.ui \

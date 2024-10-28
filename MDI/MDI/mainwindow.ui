@@ -14,8 +14,8 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" rowspan="2">
      <layout class="QFormLayout" name="formLayout_4">
       <item row="0" column="0">
        <layout class="QFormLayout" name="formLayout_3">
@@ -52,14 +52,7 @@
          </layout>
         </item>
         <item row="0" column="1">
-         <layout class="QFormLayout" name="formLayout_2">
-          <item row="0" column="0">
-           <widget class="QListWidget" name="carListWidget"/>
-          </item>
-          <item row="0" column="1">
-           <widget class="QListWidget" name="busListWidget"/>
-          </item>
-         </layout>
+         <layout class="QFormLayout" name="formLayout_2"/>
         </item>
        </layout>
       </item>
@@ -69,6 +62,19 @@
          <string>exit</string>
         </property>
        </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <layout class="QGridLayout" name="gridLayout"/>
+    </item>
+    <item row="1" column="1">
+     <layout class="QFormLayout" name="formLayout_5">
+      <item row="0" column="0">
+       <widget class="QTableView" name="carTableView"/>
+      </item>
+      <item row="0" column="1">
+       <widget class="QTableView" name="BusTableView"/>
       </item>
      </layout>
     </item>

@@ -15,6 +15,12 @@ public:
     void display() const override;
     void input() override;
     QString toString() const;
+    int getSeats() const {
+        return passengerSeats;
+    }
+    bool getDisabled() const {
+        return seatsDisabled;
+    }
 };
 
 

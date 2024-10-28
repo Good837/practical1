@@ -19,13 +19,14 @@ void Car::input() {
     cin >> doors;
 }
 QString Car::toString() const {
-    return QString("ID: %1, Model: %2, Year: %3, Price: %4, Registration Number: %5, VIN: %6, Doors: %7")
+    return QString("ID: %1, Model: %2, Year: %3, Price: %4, Registration Number: %5, VIN: %6, passenger Seats %7, Doors: %8")
     .arg(id)
         .arg(model)
         .arg(year)
         .arg(price)
         .arg(registrationNumber)
         .arg(vinNumber)
+        .arg(passengerSeats)
         .arg(doors);
 }
 

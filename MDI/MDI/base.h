@@ -24,6 +24,15 @@ public:
     QString getModel() const {
         return model;
     }
+    int getYear() const {
+        return price;
+    }
+    double getPrice() const {
+        return price;
+    }
+    QString getRegNumber() const {
+        return registrationNumber;
+    }
 
 };
 // Base

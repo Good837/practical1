@@ -12,6 +12,8 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QListWidgetItem>
+#include "sqlitedbmanager.h"
+#include <QtSql/QSqlTableModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -40,10 +42,13 @@ private slots:
 
     void onCarCreated(Car* newCar);
     void onBusCreated(Bus* newBus);
+    void loadCarTable();
+    void loadBusTable();
 
 private:
     Ui::MainWindow *ui;
     QVector<Car*> carList;
     QVector<Bus*> busList;
+    SqliteDBManager *dbManager;
 };
 #endif // MAINWINDOW_H
