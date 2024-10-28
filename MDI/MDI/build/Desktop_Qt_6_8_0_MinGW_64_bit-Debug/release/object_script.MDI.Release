@@ -1,0 +1,10 @@
+release/base.o
+release/bus.o
+release/busdialog.o
+release/car.o
+release/cardialog.o
+release/main.o
+release/mainwindow.o
+release/moc_busdialog.o
+release/moc_cardialog.o
+release/moc_mainwindow.o
