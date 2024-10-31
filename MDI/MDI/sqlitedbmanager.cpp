@@ -1,8 +1,20 @@
 #include "sqlitedbmanager.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
 SqliteDBManager::SqliteDBManager() {
+    // Спроба відкрити базу даних
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("database.db");
     connectToDataBase();
+    if (!db.open()) {
+        qCritical() << "Cannot open database:" << db.lastError().text();
+        logError("Database error: " + db.lastError().text());
+        return; // або викинути виняток
+    }
 }
+
 
 SqliteDBManager::~SqliteDBManager() {
     closeDataBase();
@@ -10,13 +22,17 @@ SqliteDBManager::~SqliteDBManager() {
 
 void SqliteDBManager::connectToDataBase() {
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("treansport_db.sqlite");
+    db.setDatabaseName("transport_db.sqlite");
     if (!db.open()) {
-        qDebug() << "Error : connection to database failed!";
+        QString errorMsg = "Cannot open database: " + db.lastError().text();
+        qCritical() << errorMsg;  // Виводимо повідомлення в консоль
+        logError(errorMsg); // Логуємо помилку
+        return; // Або викинути виняток
     } else {
         qDebug() << "Database connected successfully!";
     }
 }
+
 
 void SqliteDBManager::closeDataBase() {
     if (db.isOpen()){
@@ -61,7 +77,8 @@ bool SqliteDBManager::insertIntoTable(const Car& car){
     query.bindValue(":passengerSeats", car.getSeats());
     query.bindValue(":doors", car.getDoors());
     if (!query.exec()) {
-        qDebug() << "Failed to insert car:" << query.lastError();
+        logError("Failed to insert into table: " + query.lastError().text());
+        qWarning() << "Failed to insert into table:" << query.lastError();
         return false;
     }
     return true;
@@ -77,7 +94,8 @@ bool SqliteDBManager::insertIntoTable(const Bus& bus){
     query.bindValue(":passengerSeatsr", bus.getSeats());
     query.bindValue(":seatsDisabled", bus.getDisabled());
     if (!query.exec()) {
-        qDebug() << "Failed to insert car:" << query.lastError();
+        logError("Failed to insert into table: " + query.lastError().text());
+        qWarning() << "Failed to insert into table:" << query.lastError();
         return false;
     }
     return true;

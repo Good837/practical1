@@ -15,6 +15,7 @@ class BusDialog : public QDialog
 public:
     explicit BusDialog(QWidget *parent = nullptr);
     ~BusDialog();
+    void logError(const QString &message);
 
 signals:
     void busCreated(Bus *newBus);

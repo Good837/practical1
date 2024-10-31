@@ -1,6 +1,7 @@
 #include "cardialog.h"
 #include "ui_cardialog.h"
 #include <QMessageBox>
+#include <QFile>
 
 CarDialog::CarDialog(QWidget *parent)
     : QDialog(parent)
@@ -12,6 +13,15 @@ CarDialog::CarDialog(QWidget *parent)
 CarDialog::~CarDialog()
 {
     delete ui;
+}
+
+void CarDialog::logError(const QString &message) {
+    QFile logFile("C:/Users/Redmi/CLionProjects/untitled/MDI/MDI/log.txt");
+    if (logFile.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream out(&logFile);
+        out << message << "\n";
+    }
+    logFile.close();
 }
 
 void CarDialog::on_createButton_clicked()
@@ -27,6 +37,16 @@ void CarDialog::on_createButton_clicked()
     Car *newCar = new Car(id, model, year, price, regNumber, vinNumber, passengerSeats, doors);
     emit carCreated(newCar);
     this->close();
+    if (year < 1900 || year > 2100) {
+        if (year <= 0 || year > 2024) { // Перевірте, чи рік валідний
+            QString errorMsg = QString("Invalid year entered: %1").arg(year);
+            QMessageBox::warning(this, "Input Error", "Please enter a valid year.");
+            qWarning() << errorMsg; // Виводимо попередження у консоль
+            logError(errorMsg); // Логуємо помилку
+            return; // Вихід з функції, якщо рік некоректний
+        }
+    }
+
 }
 
 

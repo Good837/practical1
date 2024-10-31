@@ -15,6 +15,7 @@ class CarDialog : public QDialog
 public:
     explicit CarDialog(QWidget *parent = nullptr);
     ~CarDialog();
+    void logError(const QString &message);
 
 signals:
     void carCreated(Car *newCar);

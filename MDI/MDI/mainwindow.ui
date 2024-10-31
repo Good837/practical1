@@ -14,71 +14,94 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0" rowspan="2">
-     <layout class="QFormLayout" name="formLayout_4">
-      <item row="0" column="0">
-       <layout class="QFormLayout" name="formLayout_3">
-        <item row="0" column="0">
-         <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="createCarButton">
-            <property name="text">
-             <string>create car</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="createBusButton">
-            <property name="text">
-             <string>create bus</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="toggleListCar">
-            <property name="text">
-             <string>list car</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QPushButton" name="toggleListBus">
-            <property name="text">
-             <string>list bus</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1">
-         <layout class="QFormLayout" name="formLayout_2"/>
-        </item>
-       </layout>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="exit">
-        <property name="text">
-         <string>exit</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="2">
-     <layout class="QGridLayout" name="gridLayout"/>
-    </item>
-    <item row="1" column="1">
-     <layout class="QFormLayout" name="formLayout_5">
-      <item row="0" column="0">
-       <widget class="QTableView" name="carTableView"/>
-      </item>
-      <item row="0" column="1">
-       <widget class="QTableView" name="BusTableView"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
+   <widget class="QWidget" name="">
+    <layout class="QGridLayout" name="gridLayout"/>
+   </widget>
+   <widget class="QPushButton" name="exit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>134</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="createBusButton">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>42</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>create bus</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toggleListCar">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>72</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>list car</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toggleListBus">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>102</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>list bus</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="createCarButton">
+    <property name="geometry">
+     <rect>
+      <x>12</x>
+      <y>12</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>create car</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="carTableView">
+    <property name="geometry">
+     <rect>
+      <x>199</x>
+      <y>18</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTableView" name="BusTableView">
+    <property name="geometry">
+     <rect>
+      <x>461</x>
+      <y>18</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

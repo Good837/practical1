@@ -19,6 +19,8 @@ public:
     bool createTables();
     bool insertIntoTable(const Car& car);
     bool insertIntoTable(const Bus& bus);
+    void executeQuery(const QString &queryStr);
+     void logError(const QString &message);
 private:
     QSqlDatabase db;
 };
